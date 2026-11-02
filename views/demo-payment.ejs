@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo Payment - Spotify Pro</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: #121212;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 430px;
+      background: #202020;
+      padding: 30px;
+      border-radius: 15px;
+    }
+
+    h1 {
+      color: #1ed760;
+      margin-bottom: 10px;
+    }
+
+    .demo {
+      color: #ffcc66;
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .amount {
+      background: #303030;
+      padding: 18px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    label {
+      display: block;
+      margin: 15px 0 8px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 13px;
+      background: #303030;
+      color: white;
+      border: 1px solid #444;
+      border-radius: 7px;
+      outline: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      margin-top: 25px;
+      background: #1ed760;
+      border: none;
+      border-radius: 25px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    a {
+      display: block;
+      text-align: center;
+      color: #aaa;
+      margin-top: 20px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Pro Payment</h1>
+    <p class="demo">DEMO MODE — No real money will be charged.</p>
+
+    <div class="amount">
+      <span>Monthly Pro</span>
+      <strong>PKR 500</strong>
+    </div>
+
+    <form action="/pro/demo-payment" method="POST">
+
+      <label>Payment Method</label>
+      <select name="paymentMethod" required>
+        <option value="">Select payment method</option>
+        <option value="EasyPaisa">EasyPaisa</option>
+        <option value="JazzCash">JazzCash</option>
+        <option value="Bank Transfer">Bank Transfer</option>
+      </select>
+
+      <label>Account Number</label>
+      <input
+        type="text"
+        name="accountNumber"
+        placeholder="Enter demo account number"
+        required
+      >
+
+      <label>Demo Transaction ID</label>
+      <input
+        type="text"
+        name="transactionId"
+        placeholder="Enter transaction ID"
+        required
+      >
+
+      <button type="submit">Complete Demo Payment →</button>
+
+    </form>
+
+    <a href="/">← Back to Home</a>
+  </div>
+
+</body>
+</html>

@@ -21,7 +21,12 @@ const signupSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true
-    }
+    },
+    plan: {
+    type: String,
+    enum: ["free", "pro"],
+    default: "free"
+}
 });
 
 module.exports = mongoose.model("User", signupSchema);

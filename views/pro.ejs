@@ -1,132 +1,125 @@
- 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music Pro | Admin Dashboard</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
-        body { background: #101010; color: #fff; min-height: 100vh; }
-        .layout { display: flex; min-height: 100vh; }
-        aside { width: 240px; background: #080808; padding: 30px 20px; border-right: 1px solid #252525; }
-        .logo { font-size: 25px; font-weight: bold; color: #1ed760; margin-bottom: 45px; }
-        .admin-label { color: #777; font-size: 11px; letter-spacing: 2px; margin-bottom: 15px; }
-        aside a { display: block; color: #aaa; text-decoration: none; padding: 14px 12px; border-radius: 7px; margin-bottom: 5px; font-size: 14px; }
-        aside a:hover, aside a.active { background: #202020; color: #1ed760; }
-        main { flex: 1; padding: 35px; min-width: 0; }
-        header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; gap: 15px; }
-        header h1 { font-size: 27px; }
-        .admin-profile { background: #222; padding: 11px 18px; border-radius: 30px; font-size: 13px; }
-        .welcome { margin-bottom: 35px; }
-        .welcome h2 { font-size: 29px; margin-bottom: 10px; }
-        .welcome p { color: #888; font-size: 14px; }
-        .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-bottom: 40px; }
-        .stat { background: #191919; border: 1px solid #292929; padding: 23px; border-radius: 12px; }
-        .stat p { color: #888; font-size: 13px; margin-bottom: 15px; }
-        .stat h2 { font-size: 30px; color: #1ed760; }
-        .section { background: #191919; border: 1px solid #292929; padding: 25px; border-radius: 12px; margin-bottom: 25px; }
-        .section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 22px; gap: 10px; }
-        .section-header h2 { font-size: 19px; }
-        button { background: #1ed760; color: #000; border: none; padding: 11px 18px; border-radius: 25px; font-weight: bold; cursor: pointer; }
-        button:hover { background: #17bd50; }
-        .actions { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
-        .action { background: #222; padding: 20px; border-radius: 9px; }
-        .action h3 { font-size: 15px; margin-bottom: 9px; }
-        .action p { color: #888; font-size: 13px; line-height: 1.5; }
-        .activity { color: #888; font-size: 14px; padding: 15px 0; border-bottom: 1px solid #292929; }
-        @media(max-width: 750px) {
-            aside { width: 75px; padding: 20px 8px; }
-            .logo { font-size: 17px; text-align: center; }
-            .admin-label { display: none; }
-            aside a { font-size: 11px; padding: 13px 3px; text-align: center; }
-            main { padding: 20px 12px; }
-            .stats { grid-template-columns: 1fr; }
-            .actions { grid-template-columns: 1fr; }
-            header h1 { font-size: 20px; }
-            .welcome h2 { font-size: 23px; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Music Pro</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#080808;color:#fff}
+nav{height:75px;padding:0 7%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #222}
+.logo{font-size:23px;font-weight:bold;color:#1ed760}
+nav a{color:#aaa;text-decoration:none;font-size:14px}
+.hero{min-height:480px;padding:100px 8%;display:flex;align-items:center;background:radial-gradient(ellipse at 80% 40%,#17472b 0%,#101810 35%,#080808 75%)}
+.hero-content{max-width:650px}
+.tag{color:#1ed760;letter-spacing:3px;font-size:12px;font-weight:bold;margin-bottom:25px}
+h1{font-size:clamp(45px,7vw,82px);line-height:1.05;margin-bottom:25px;letter-spacing:-3px}
+h1 span{color:#1ed760}
+.hero p{color:#aaa;font-size:17px;line-height:1.7;max-width:520px}
+.status{display:inline-flex;align-items:center;gap:9px;background:#153d25;border:1px solid #28663c;color:#1ed760;padding:12px 18px;border-radius:30px;margin-top:30px;font-size:13px}
+.dot{width:8px;height:8px;background:#1ed760;border-radius:50%}
+section{padding:75px 8%}
+.section-title{font-size:32px;margin-bottom:12px}
+.subtitle{color:#888;margin-bottom:35px;line-height:1.6}
+.benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:#151515;border:1px solid #292929;padding:28px;border-radius:14px;min-height:180px}
+.card .number{color:#1ed760;font-size:13px;margin-bottom:25px}
+.card h3{font-size:19px;margin-bottom:12px}
+.card p{font-size:14px;color:#888;line-height:1.6}
+.membership{background:#151515;border:1px solid #292929;border-radius:16px;padding:35px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.membership p{color:#888;font-size:14px;margin-top:10px}
+.membership h2{font-size:25px}
+.plan{color:#1ed760;font-weight:bold;font-size:14px}
+footer{border-top:1px solid #222;padding:30px 8%;display:flex;justify-content:space-between;color:#777;font-size:13px}
+footer a{color:#aaa;text-decoration:none}
+@media(max-width:700px){
+.hero{padding:80px 7%;min-height:420px}
+.benefits{grid-template-columns:1fr}
+section{padding:55px 7%}
+.membership{align-items:flex-start;flex-direction:column}
+footer{gap:15px;flex-direction:column}
+}
+</style>
 </head>
 <body>
-    <div class="layout">
-        <aside>
-            <div class="logo">♫ MUSIC PRO</div>
-            <p class="admin-label">ADMIN PANEL</p>
-            <a href="/adminpanel" class="active">⌂ Dashboard</a>
-            <a href="/adminpanel/songs">♫ Manage Songs</a>
-            <a href="/adminpanel/upload">＋ Upload Song</a>
-            <a href="/adminpanel/users">♙ Manage Users</a>
-            <a href="/adminpanel/settings">⚙ Settings</a>
-            <a href="/logout">↪ Logout</a>
-            <a href="/add/admin">Add admin</a>
-        </aside>
 
-        <main>
-            <header>
-                <h1>Dashboard</h1>
-                <div class="admin-profile">Administrator</div>
-            </header>
+<nav>
+    <div class="logo">♫ MUSIC PRO</div>
+    <a href="/home">← Back to Music</a>
+</nav>
 
-            <section class="welcome">
-                <h2>Welcome Back, Admin.</h2>
-                <p>Manage your music platform from one place.</p>
-            </section>
-
-            <section class="stats">
-                <div class="stat">
-                    <p>Total Songs</p>
-                    <h2>0</h2>
-                </div>
-                <div class="stat">
-                    <p>Total Users</p>
-                    <h2>0</h2>
-                </div>
-                <div class="stat">
-                    <p>Total Plays</p>
-                    <h2>0</h2>
-                </div>
-            </section>
-
-            <section class="section">
-                <div class="section-header">
-                    <h2>Quick Actions</h2>
-                </div>
-                <div class="actions">
-                    <div class="action">
-                        <h3>Upload New Song</h3>
-                        <p>Add new music to your platform.</p>
-                        <br>
-                        <button onclick="location.href='/adminpanel/upload'">Upload Song +</button>
-                    </div>
-                    <div class="action">
-                        <h3>Manage Music</h3>
-                        <p>Edit or remove existing songs.</p>
-                        <br>
-                        <button onclick="location.href='/adminpanel/songs'">Manage Songs</button>
-                    </div>
-                    <div class="action">
-                        <h3>Manage Users</h3>
-                        <p>View and manage registered users.</p>
-                        <br>
-                        <button onclick="location.href='/adminpanel/users'">View Users</button>
-                    </div>
-                    <div class="action">
-                        <h3>Platform Settings</h3>
-                        <p>Manage your platform configuration.</p>
-                        <br>
-                        <button onclick="location.href='/adminpanel/settings'">Settings</button>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section">
-                <div class="section-header">
-                    <h2>Recent Activity</h2>
-                </div>
-                <div class="activity">No recent activity available.</div>
-            </section>
-        </main>
+<div class="hero">
+    <div class="hero-content">
+        <div class="tag">YOUR MUSIC. YOUR RULES.</div>
+        <h1>Music without <span>limits.</span></h1>
+        <p>Welcome to Music Pro. Enjoy your music experience with premium features, uninterrupted listening and complete control.</p>
+        <div class="status">
+            <span class="dot"></span>
+            PRO MEMBERSHIP ACTIVE
+        </div>
     </div>
+</div>
+
+<section>
+    <h2 class="section-title">The Pro Experience</h2>
+    <p class="subtitle">Everything you need for a better music experience.</p>
+
+    <div class="benefits">
+        <div class="card">
+            <div class="number">01 / LISTEN</div>
+            <h3>Ad-free Music</h3>
+            <p>Enjoy your favourite tracks without interruptions.</p>
+        </div>
+
+        <div class="card">
+            <div class="number">02 / QUALITY</div>
+            <h3>High Quality Audio</h3>
+            <p>Experience your music with better sound quality.</p>
+        </div>
+
+        <div class="card">
+            <div class="number">03 / CONTROL</div>
+            <h3>Unlimited Skips</h3>
+            <p>Skip tracks and enjoy music your own way.</p>
+        </div>
+
+        <div class="card">
+            <div class="number">04 / FREEDOM</div>
+            <h3>Offline Listening</h3>
+            <p>Save your favourite music for listening offline.</p>
+        </div>
+
+        <div class="card">
+            <div class="number">05 / DISCOVER</div>
+            <h3>Explore More</h3>
+            <p>Discover music and create your own playlists.</p>
+        </div>
+
+        <div class="card">
+            <div class="number">06 / PREMIUM</div>
+            <h3>Exclusive Experience</h3>
+            <p>Make your music experience truly yours.</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="membership">
+        <div>
+            <div class="plan">YOUR MEMBERSHIP</div>
+            <h2>Music Pro Monthly</h2>
+            <p>Your premium membership is currently active.</p>
+        </div>
+        <div class="plan">ACTIVE ✓</div>
+    </div>
+</section>
+
+<footer>
+    <div>♫ MUSIC PRO</div>
+    <a href="/home">Back to Home</a>
+    <div>Made for music lovers.</div>
+</footer>
+
 </body>
 </html>
