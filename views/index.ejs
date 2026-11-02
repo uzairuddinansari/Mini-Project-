@@ -1,0 +1,95 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music | Home</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { background: #121212; color: white; min-height: 100vh; }
+        .layout { display: flex; min-height: 100vh; }
+        aside { width: 230px; background: #000; padding: 30px 20px; }
+        .logo { font-size: 27px; font-weight: bold; color: #1ed760; margin-bottom: 45px; }
+        aside a { display: block; color: #aaa; text-decoration: none; padding: 13px 5px; font-size: 15px; }
+        aside a:hover { color: white; }
+        main { flex: 1; padding: 30px; }
+        header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; }
+        header h2 { font-size: 25px; }
+        .profile { background: #282828; padding: 10px 18px; border-radius: 25px; }
+        .welcome { margin-bottom: 35px; }
+        .welcome h1 { font-size: 32px; margin-bottom: 10px; }
+        .welcome p { color: #aaa; }
+        .section-title { margin-bottom: 20px; font-size: 21px; }
+        .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 20px; }
+        .card { background: #181818; padding: 15px; border-radius: 10px; cursor: pointer; transition: .3s; }
+        .card:hover { background: #282828; transform: translateY(-4px); }
+        .cover { width: 100%; aspect-ratio: 1; border-radius: 7px; background: linear-gradient(135deg, #1ed760, #124d32); display: grid; place-items: center; font-size: 42px; margin-bottom: 15px; }
+        .card h3 { font-size: 16px; margin-bottom: 8px; }
+        .card p { font-size: 13px; color: #aaa; line-height: 1.5; }
+        .player { position: fixed; bottom: 0; left: 230px; right: 0; background: #181818; border-top: 1px solid #333; padding: 17px 25px; text-align: center; color: #aaa; }
+        @media(max-width: 650px) {
+            aside { width: 75px; padding: 20px 8px; }
+            .logo { font-size: 17px; text-align: center; }
+            aside a { font-size: 12px; text-align: center; }
+            main { padding: 20px 12px; }
+            .player { left: 75px; }
+            header h2 { font-size: 19px; }
+            .welcome h1 { font-size: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="layout">
+        <aside>
+            <div class="logo">♫ MUSIC</div>
+            <a href="/">⌂ Home</a>
+            <a href="#">⌕ Search</a>
+            <a href="#">▤ Your Library</a>
+            <a href="#">♡ Liked Songs</a>
+            <a href="/admin/pro">Pro Mood </a>
+        </aside>
+
+        <main>
+            <header>
+                <h2>Home</h2>
+                <div class="profile">User Account</div>
+            </header>
+
+            <section class="welcome">
+                <h1>Good Music, Good Mood.</h1>
+                <p>Discover your favourite music and enjoy your day.</p>
+            </section>
+
+            <section>
+                <h2 class="section-title">Made For You</h2>
+                <div class="cards">
+                    <div class="card">
+                        <div class="cover">♫</div>
+                        <h3>Daily Mix</h3>
+                        <p>Your favourite music in one place.</p>
+                    </div>
+                    <div class="card">
+                        <div class="cover">♡</div>
+                        <h3>Liked Songs</h3>
+                        <p>All the songs you love.</p>
+                    </div>
+                    <div class="card">
+                        <div class="cover">☀</div>
+                        <h3>Chill Vibes</h3>
+                        <p>Relax and enjoy your music.</p>
+                    </div>
+                    <div class="card">
+                        <div class="cover">⚡</div>
+                        <h3>Top Hits</h3>
+                        <p>Listen to popular tracks.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div class="player">♫ &nbsp; Select a song to start listening</div>
+</body>
+</html>
